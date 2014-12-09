@@ -1,0 +1,5 @@
+num = raw_input("Enter a number: ")
+power = raw_input("Now enter a power: ")
+
+print num + " to the power of " + power + " equals " + num ** power
+

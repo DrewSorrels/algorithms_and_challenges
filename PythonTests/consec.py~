@@ -1,0 +1,33 @@
+#Finds how many groups of 3 consecutive numbers there are from botVal to topVal where the sum of the three numbers is less than 9
+botVal = 10 ** 3
+topVal = botVal + 2
+
+def num(s):
+	try: 
+		return int(s)
+	except exceptions.ValueError:
+		return float(s)
+
+def threeConsec(num):
+	strNum = str( num )
+	listNum = list(strNum)
+	for i in enumerate( listNum ) :
+		
+		if ( num(listNum[i]) + num(listNum[i + 1]) + num(listNum[i - 1]) > 9 ):
+			return False
+	return True
+
+
+count = 0
+char_list = []
+sum = 0
+for i in xrange(botVal, topVal):
+	char_list = list(str(i))
+	sum = 0
+	
+	if( threeConsec(char_list) ):
+		sum += 1
+
+print sum	
+
+		
